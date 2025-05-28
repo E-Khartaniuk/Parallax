@@ -1,0 +1,113 @@
+.heroSlide {
+  height: 100vh;
+  width: 1920px;
+  padding: 0 80px;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* color: #fff; */
+}
+
+.heroTitle {
+  margin-top: 320px;
+
+  font-family: "Clash Grotesk";
+  font-size: 128px;
+  width: 1629px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%; /* 128px */
+
+  background: linear-gradient(
+    109deg,
+    #b53ea4 -2.82%,
+    #fc6f32 34.48%,
+    #ff4a59 93.08%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.linksWraper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.tryNow {
+  margin-left: 56px;
+
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+  color: white;
+  text-decoration: none;
+
+  width: 96px;
+  height: 29px;
+}
+
+.description {
+  margin: 36px 0px;
+  color: #fff;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.horizontalList {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  width: 80%;
+  max-width: 1200px;
+}
+
+.horizontalList.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.listItem {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 0 10px;
+  text-align: center;
+  color: #fff;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.item1 {
+  transition-delay: 0.1s;
+}
+
+.item2 {
+  transition-delay: 0.2s;
+}
+
+.item3 {
+  transition-delay: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+  .horizontalList {
+    width: 90%;
+  }
+  .listItem {
+    height: 150px;
+    padding: 10px;
+  }
+}

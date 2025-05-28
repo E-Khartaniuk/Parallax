@@ -1,0 +1,22 @@
+.bySaltButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  border-radius: 91px;
+  border: 2px solid var(--main, #963488);
+  background: rgba(2, 4, 9, 0.2);
+
+  width: 220px;
+  height: 75px;
+
+  color: #fff;
+
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
