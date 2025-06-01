@@ -10,6 +10,10 @@ body {
   /* width: 100vw; */
 }
 
+ul {
+  list-style: none;
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

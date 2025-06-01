@@ -12,34 +12,34 @@
   transition: background-position 0.8s ease;
 }
 
-.moonBackground {
+.earthBackground {
   width: 400px;
   height: 400px;
 }
 
-.earth {
+.moon {
   width: 200px;
   height: 200px;
 }
 
 @media (min-width: 768px) {
-  .moonBackground {
+  .earthBackground {
     width: 600px;
     height: 600px;
   }
-  .earth {
+  .moon {
     width: 300px;
     height: 300px;
   }
 }
 
 @media (min-width: 1024px) {
-  .moonBackground {
+  .earthBackground {
     width: 1016px;
     height: 1016px;
   }
 
-  .earth {
+  .moon {
     width: 400px;
     height: 400px;
   }

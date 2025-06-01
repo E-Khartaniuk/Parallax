@@ -1,0 +1,32 @@
+.container {
+  height: 100vh;
+  width: 1920px;
+  padding: 0 80px;
+}
+
+.title {
+  margin-top: 300px;
+  width: 1050px;
+
+  color: #fff;
+  font-family: "Clash Grotesk";
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%; /* 70.4px */
+}
+
+.decrption {
+  margin-top: 32px;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 1140px;
+  color: #fff;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px; /* 133.333% */
+}

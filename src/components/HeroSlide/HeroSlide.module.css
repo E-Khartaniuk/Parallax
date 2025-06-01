@@ -1,29 +1,49 @@
 .heroSlide {
   height: 100vh;
-  width: 1920px;
+  min-width: 360px;
+  max-width: 1920px;
   padding: 0 80px;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  /* justify-content: center; */
-  /* color: #fff; */
 }
 
 .heroTitle {
-  margin-top: 320px;
-
   font-family: "Clash Grotesk";
-  font-size: 128px;
-  width: 1629px;
+  /* font-size: 128px; */
+  font-size: clamp(32px, 6vw, 128px);
+  /* font-size: 7vw; */
+  min-width: 320px;
+  max-width: 1629px;
   font-style: normal;
   font-weight: 500;
-  line-height: 100%; /* 128px */
+  line-height: 100%;
+
+  /* margin-top: 320px; */
+
+  margin-top: calc(100vh / 3.5);
 
   background: linear-gradient(
     109deg,
     #b53ea4 -2.82%,
     #fc6f32 34.48%,
     #ff4a59 93.08%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  transition: margin-top 0.6s ease, background 0.6s ease,
+    -webkit-text-fill-color 0.6s ease;
+}
+
+.heroTitlSecondState {
+  margin-top: calc(100vh / 6);
+
+  background: linear-gradient(
+    109deg,
+    hsla(309, 100%, 92%, 1),
+    hsla(18, 100%, 85%, 1),
+    hsla(355, 100%, 87%, 1)
   );
   background-clip: text;
   -webkit-background-clip: text;
@@ -35,6 +55,7 @@
   flex-direction: row;
   align-items: center;
 }
+
 .tryNow {
   margin-left: 56px;
 
@@ -55,7 +76,7 @@
   margin: 36px 0px;
   color: #fff;
   font-family: Inter;
-  font-size: 24px;
+  font-size: clamp(12px, 4vw, 24px);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -100,14 +121,31 @@
 }
 
 @media (max-width: 768px) {
+  .heroSlide {
+    padding: 0 32px;
+  }
   .heroTitle {
-    font-size: 2rem;
+    margin-top: calc(100vh / 3);
+  }
+
+  .description {
+    font-size: 14px;
+    margin: 14px 0px;
+  }
+
+  .heroTitlSecondState {
+    margin-top: calc(100vh / 8);
   }
   .horizontalList {
-    width: 90%;
+    width: 100%;
   }
   .listItem {
     height: 150px;
     padding: 10px;
+  }
+
+  .tryNow {
+    margin-left: 26px;
+    font-size: 16px;
   }
 }

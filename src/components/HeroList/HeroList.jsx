@@ -1,21 +1,23 @@
 import React from "react";
 import styles from "./HeroList.module.css";
 
-function HeroList() {
+function HeroList({ showList }) {
   return (
     <ul className={styles.list}>
-      <li className={styles.listitem}>
-        <p className={styles.value}>1,873</p>
-        <span className={styles.description}>LLM models</span>
-      </li>
-      <li className={styles.listitem}>
-        <p className={styles.value}>$326,734</p>
-        <span className={styles.description}>Paid to data scientists</span>
-      </li>
-      <li className={styles.listitem}>
-        <p className={styles.value}>6,557</p>
-        <span className={styles.description}>Developers</span>
-      </li>
+      {[
+        { value: "1,873", desc: "LLM models" },
+        { value: "$326,734", desc: "Paid to data scientists" },
+        { value: "6,557", desc: "Developers" },
+      ].map((item, i) => (
+        <li
+          key={i}
+          className={`${styles.listitem} ${styles[`item${i + 1}`]} ${
+            showList ? styles.showitem : ""
+          }`}>
+          <p className={styles.value}>{item.value}</p>
+          <span className={styles.description}>{item.desc}</span>
+        </li>
+      ))}
     </ul>
   );
 }

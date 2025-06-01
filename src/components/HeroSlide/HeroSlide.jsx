@@ -3,10 +3,13 @@ import styles from "./HeroSlide.module.css";
 import Button from "../ui/Button/Button";
 import HeroList from "../HeroList/HeroList";
 
-function HeroSlide() {
+function HeroSlide({ showList }) {
   return (
     <section className={styles.heroSlide}>
-      <h1 className={styles.heroTitle}>
+      <h1
+        className={`${styles.heroTitle} ${
+          showList ? styles.heroTitlSecondState : ""
+        }`}>
         A new economic primitive for funding decentralized AI
       </h1>
       <p className={styles.description}>
@@ -19,8 +22,7 @@ function HeroSlide() {
           Try Now
         </a>
       </div>
-
-      <HeroList></HeroList>
+      <HeroList showList={showList} />
     </section>
   );
 }

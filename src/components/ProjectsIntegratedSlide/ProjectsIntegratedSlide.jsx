@@ -1,9 +1,14 @@
 import React from "react";
+import IntegratedProjects from "../IntegratedProjects/IntegratedProjects";
+import style from "./ProjectsIntegratedSlide.module.css";
 
-function ProjectsIntegratedSlide() {
+function ProjectsIntegratedSlide({ isActive }) {
   return (
-    <div>
-      <h2>Projects integrated into the Arrakis AI Ecosystem</h2>
+    <div className={style.test}>
+      <h2 className={style.title}>
+        Projects integrated into the Arrakis AI Ecosystem
+      </h2>
+      <IntegratedProjects isActive={isActive}></IntegratedProjects>
     </div>
   );
 }

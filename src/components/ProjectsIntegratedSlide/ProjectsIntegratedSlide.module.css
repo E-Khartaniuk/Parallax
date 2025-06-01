@@ -1,0 +1,14 @@
+.title {
+  color: #fff;
+  text-align: center;
+  font-family: "Clash Grotesk";
+
+  font-size: clamp(32px, 6vw, 64px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.test {
+  overflow: hidden;
+}
