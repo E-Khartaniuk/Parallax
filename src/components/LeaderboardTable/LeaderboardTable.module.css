@@ -38,11 +38,6 @@ td:nth-child(3) {
   text-align: left;
 }
 
-/* th,
-td:nth-child(1) {
- padding: 12px 4px;
-} */
-
 tbody tr:nth-child(odd) {
   background: rgba(201, 217, 255, 0.08);
 }
