@@ -5,7 +5,6 @@
 }
 
 .title {
-  /* margin-top: 300px; */
   margin-top: clamp(100px, 22vw, 300px);
   max-width: 1050px;
 
@@ -14,7 +13,7 @@
   font-size: clamp(32px, 6vw, 64px);
   font-style: normal;
   font-weight: 500;
-  line-height: 110%; /* 70.4px */
+  line-height: 110%;
 }
 
 .decrption {

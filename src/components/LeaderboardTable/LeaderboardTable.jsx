@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import styles from "./LeaderboardTable.module.css";
-import ArrowUp from "../ui/ChangeSign/ArrowUp";
-import ArrowDown from "../ui/ChangeSign/ArrowDown";
-import Dash from "../ui/ChangeSign/Dash";
+import renderChangeIcon from "../ui/ChangeStatus/ChangeStatus";
 
-function LeaderboardTable() {
+function LeaderboardTable({ showMore }) {
   const [data, setData] = useState([]);
+  const [animationKey, setAnimationKey] = useState("fade-in");
 
   useEffect(() => {
     fetch("/Parallax/api/leaderboard.json")
@@ -14,11 +13,15 @@ function LeaderboardTable() {
       .catch((err) => console.error("Ошибка загрузки JSON:", err));
   }, []);
 
-  const renderChangeIcon = (change) => {
-    if (change === "up") return <ArrowUp></ArrowUp>;
-    if (change === "down") return <ArrowDown></ArrowDown>;
-    return <Dash></Dash>;
-  };
+  const displayedData = showMore ? data.slice(8, 16) : data.slice(0, 8);
+
+  useEffect(() => {
+    setAnimationKey("fade-out");
+    const timer = setTimeout(() => {
+      setAnimationKey("fade-in");
+    }, 200);
+    return () => clearTimeout(timer);
+  }, [showMore]);
 
   return (
     <div className={styles.container}>
@@ -39,8 +42,8 @@ function LeaderboardTable() {
           </tr>
         </thead>
         <tbody>
-          {data.map((model) => (
-            <tr key={model.rank}>
+          {displayedData.map((model) => (
+            <tr key={model.rank} className={`${styles[animationKey]}`}>
               <td>{renderChangeIcon(model.change)}</td>
               <td>{model.rank}</td>
               <td>{model.modelName}</td>

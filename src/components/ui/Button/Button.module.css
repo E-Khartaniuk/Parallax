@@ -29,3 +29,10 @@
     height: 55px;
   }
 }
+@media (max-width: 480px) {
+  .bySaltButton {
+    padding: 12px 11px;
+    font-size: 13px;
+    height: 55px;
+  }
+}

@@ -1,14 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./LLMLeaderboardSlide.module.css";
 import LeaderboardTable from "../LeaderboardTable/LeaderboardTable";
 import Button from "../ui/Button/Button";
+import ArrowDown from "../ui/ChangeSign/ArrowDown";
 
 function LLMLeaderboardSlide() {
+  const [showMore, setShowMore] = useState(false);
+
+  const handleShowMore = () => {
+    setShowMore((prev) => !prev); // Переключаем состояние между true и false
+  };
+
   return (
     <section className={styles.container}>
       <div className={styles.titleWrapper}>
         <h2 className={styles.title}>LLM Leaderboard</h2>
-
         <Button>Submit your model</Button>
       </div>
       <p className={styles.description}>
@@ -16,7 +22,15 @@ function LLMLeaderboardSlide() {
         test LLMs on a large number of different evaluation tasks. The higher
         the score, the better the LLM.
       </p>
-      <LeaderboardTable></LeaderboardTable>
+      <LeaderboardTable showMore={showMore} />
+      <div className={styles.loadMoreWrapper}>
+        <span className={styles.fullLeaderboard}>
+          {showMore ? "View full leaderboard" : ""}
+        </span>
+        <button className={styles.arrowDown} onClick={handleShowMore}>
+          <ArrowDown arrowColor="white" />
+        </button>
+      </div>
     </section>
   );
 }

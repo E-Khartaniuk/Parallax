@@ -2,44 +2,71 @@
   width: 100vw;
   overflow-x: auto;
   padding: 0 80px;
+
+  overflow-y: hidden;
 }
 
 .table {
   width: 100%;
-
   overflow-x: auto;
   color: #fff;
-
   text-overflow: ellipsis;
   font-family: Inter;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-
   border-collapse: collapse;
 }
 
 thead {
   color: #8f99b0;
-
   font-weight: 600;
 }
 
 th,
 td {
-  padding: 26px 16px;
-
+  padding: 20px 16px;
   text-align: right;
 }
 
-th,
+th:nth-child(3),
 td:nth-child(3) {
   text-align: left;
 }
 
 tbody tr:nth-child(odd) {
   background: rgba(201, 217, 255, 0.08);
+}
+
+.fade-out {
+  animation: fadeOut 0.2s ease-out forwards;
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 1114px) {
@@ -49,7 +76,7 @@ tbody tr:nth-child(odd) {
 
   th,
   td {
-    padding: 20px 10px;
+    padding: 16px 8px;
     text-align: right;
   }
 }
