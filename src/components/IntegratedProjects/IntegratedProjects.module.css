@@ -6,10 +6,9 @@
 }
 
 .list {
-  /* margin-top: 49px; */
   margin-top: clamp(12px, 5vw, 49px);
   display: flex;
-  /* gap: 120px; */
+
   gap: clamp(30px, 5vw, 120px);
   align-items: center;
 

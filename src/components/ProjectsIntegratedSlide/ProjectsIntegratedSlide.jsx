@@ -4,7 +4,7 @@ import style from "./ProjectsIntegratedSlide.module.css";
 
 function ProjectsIntegratedSlide({ isActive }) {
   return (
-    <div className={style.test}>
+    <div className={style.container}>
       <h2 className={style.title}>
         Projects integrated into the Arrakis AI Ecosystem
       </h2>
