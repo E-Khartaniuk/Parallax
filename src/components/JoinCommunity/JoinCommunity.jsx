@@ -17,10 +17,18 @@ function JoinCommunity() {
           Let the fate of AI be in our hands and not that of big tech companies.
         </p>
       </div>
-      <div className={styles.iconsWrapper}>
-        <img src={xIcon} alt="X" />
-        <img src={telegramicon} alt="telegram" />
-      </div>
+      <ul className={styles.iconsWrapper}>
+        <li>
+          <a href="/">
+            <img src={xIcon} alt="X" />
+          </a>
+        </li>
+        <li>
+          <a href="/">
+            <img src={telegramicon} alt="telegram" />
+          </a>
+        </li>
+      </ul>
     </section>
   );
 }
