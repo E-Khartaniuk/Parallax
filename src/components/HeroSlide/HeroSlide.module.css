@@ -9,9 +9,9 @@
 
 .heroTitle {
   font-family: "Clash Grotesk";
-  /* font-size: 128px; */
+
   font-size: clamp(32px, 6vw, 128px);
-  /* font-size: 7vw; */
+
   min-width: 320px;
   max-width: 1629px;
   font-style: normal;
@@ -70,6 +70,21 @@
 
   width: 96px;
   height: 29px;
+
+  transition: background 0.5s ease, -webkit-text-fill-color 0.5s ease;
+}
+
+.tryNow:hover,
+.tryNow:focus {
+  background: linear-gradient(
+    106deg,
+    #963488 -12.33%,
+    #fc6f32 50.28%,
+    #ff4a59 114.17%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .description {

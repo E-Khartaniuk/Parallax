@@ -6,11 +6,22 @@ import LLMLeaderboardSlide from "./components/LLMLeaderboardSlide.jsx/LLMLeaderb
 import ProjectsIntegratedSlide from "./components/ProjectsIntegratedSlide/ProjectsIntegratedSlide";
 import "swiper/css";
 import { SwiperSlide, Swiper } from "swiper/react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import earth from "./img/moon.png";
 import moon from "./img/image 122.png";
-import { earthStyles, moonStyles, slideStyle } from "./utils/styles";
+import bottomEarth from "./img/bottom earth.png";
+import blueDecorationBG from "./img/blueDecorationBG.svg";
+import redDecorationBG from "./img/redDecorationBG.svg";
+import {
+  bottomEarthStyles,
+  earthStyles,
+  moonStyles,
+  slideStyle,
+} from "./utils/styles";
 import JoinCommunity from "./components/JoinCommunity/JoinCommunity";
+import Footer from "./components/Footer/Footer";
+import RedDecorationElement from "./components/ui/ColorDecorationElements/redDecorationElement";
+import BlueDecorationElement from "./components/ui/ColorDecorationElements/blueDecorationElement";
 
 function App() {
   const slidesCount = 5;
@@ -56,6 +67,8 @@ function App() {
   const backgroundOffset = (activeIndex / (slidesCount - 1)) * maxOffset;
   const earthOffset = activeIndex * 200;
 
+  console.log(activeIndex);
+
   return (
     <div
       style={{ position: "relative", overflow: "hidden" }}
@@ -72,7 +85,7 @@ function App() {
         src={earth}
         alt="earth"
         className="earthBackground"
-        style={earthStyles(earthOffset)}
+        style={earthStyles(earthOffset, isHeroListVisible, activeIndex)}
       />
       {/* moon */}
       <img
@@ -81,6 +94,20 @@ function App() {
         className="moon"
         style={moonStyles(activeIndex, slidesCount)}
       />
+
+      <img
+        src={bottomEarth}
+        alt="earth"
+        className="earth"
+        style={bottomEarthStyles(activeIndex, slidesCount)}
+      />
+      <RedDecorationElement
+        activeIndex={activeIndex}
+        isHeroListVisible={isHeroListVisible}></RedDecorationElement>
+
+      <BlueDecorationElement
+        activeIndex={activeIndex}
+        isHeroListVisible={isHeroListVisible}></BlueDecorationElement>
 
       <Swiper
         allowSlideNext={activeScrol}
@@ -107,6 +134,9 @@ function App() {
         </SwiperSlide>
         <SwiperSlide style={slideStyle()}>
           <JoinCommunity />
+        </SwiperSlide>
+        <SwiperSlide style={slideStyle()}>
+          <Footer />
         </SwiperSlide>
       </Swiper>
     </div>

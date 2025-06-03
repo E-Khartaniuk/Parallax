@@ -22,6 +22,16 @@
   line-height: normal;
 }
 
+.bySaltButton:hover {
+  border: 2px solid var(--main, #963488);
+  background: linear-gradient(
+    106deg,
+    #963488 -12.33%,
+    #fc6f32 50.28%,
+    #ff4a59 114.17%
+  );
+}
+
 @media (max-width: 768px) {
   .bySaltButton {
     padding: 14px 26px;

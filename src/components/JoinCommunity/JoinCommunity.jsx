@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "./JoinCommunity.module.css";
+import xIcon from "../../img/x icon.png";
+import telegramicon from "../../img/telegram icon.png";
 
 function JoinCommunity() {
   return (
@@ -15,7 +17,10 @@ function JoinCommunity() {
           Let the fate of AI be in our hands and not that of big tech companies.
         </p>
       </div>
-      <div>logo logo</div>
+      <div className={styles.iconsWrapper}>
+        <img src={xIcon} alt="X" />
+        <img src={telegramicon} alt="telegram" />
+      </div>
     </section>
   );
 }

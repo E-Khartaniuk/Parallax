@@ -13,13 +13,24 @@
 }
 
 .earthBackground {
-  width: 400px;
-  height: 400px;
+  width: 1016px;
+  height: 1016px;
 }
 
 .moon {
-  width: 200px;
-  height: 200px;
+  width: clamp(150px, 33vw, 485px);
+  height: clamp(150px, 33vw, 485px);
+}
+
+@media (min-width: 320px) {
+  .earthBackground {
+    width: 400px;
+    height: 400px;
+  }
+  /* .moon {
+    width: clamp(150px, 6vw, 400px);
+    height: 150px;
+  } */
 }
 
 @media (min-width: 768px) {
@@ -27,10 +38,10 @@
     width: 600px;
     height: 600px;
   }
-  .moon {
-    width: 300px;
-    height: 300px;
-  }
+  /* .moon {
+    width: 400px;
+    height: 400px;
+  } */
 }
 
 @media (min-width: 1024px) {
@@ -39,8 +50,8 @@
     height: 1016px;
   }
 
-  .moon {
-    width: 400px;
-    height: 400px;
-  }
+  /* .moon {
+    width: 484px;
+    height: 484px;
+  } */
 }

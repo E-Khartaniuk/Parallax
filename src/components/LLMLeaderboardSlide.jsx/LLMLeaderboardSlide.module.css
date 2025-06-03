@@ -63,6 +63,11 @@
   border: 1px solid #fff;
   width: fit-content;
   background: transparent;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.arrowDown:hover {
+  border: 1px solid #963488;
 }
 
 @media (max-width: 1114px) {

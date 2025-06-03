@@ -17,18 +17,25 @@
 }
 
 .decrption {
+  max-width: 1140px;
+
   margin-top: clamp(12px, 2vw, 32px);
   margin-bottom: 32px;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  max-width: 1140px;
+
   color: #fff;
   font-family: Inter;
   font-size: clamp(12px, 2.5vw, 24px);
   font-style: normal;
   font-weight: 400;
   line-height: clamp(14px, 3vw, 32px);
+}
+
+.iconsWrapper {
+  display: flex;
+  gap: 32px;
 }
 
 @media (max-width: 768px) {
