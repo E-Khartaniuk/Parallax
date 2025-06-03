@@ -39,12 +39,12 @@ function Footer() {
             </li>
             <li className={styles.footerLegalListItem}>
               <a href="/" className={styles.footerLegalLinks}>
-                Privacy Poli cy
+                Privacy Policy
               </a>
             </li>
             <li className={styles.footerLegalListItem}>
               <a href="/" className={styles.footerLegalLinks}>
-                Cookie Polic y
+                Cookie Policy
               </a>
             </li>
           </ul>

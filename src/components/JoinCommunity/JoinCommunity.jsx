@@ -20,12 +20,12 @@ function JoinCommunity() {
       <ul className={styles.iconsWrapper}>
         <li>
           <a href="/">
-            <img src={xIcon} alt="X" />
+            <img src={xIcon} alt="X" className={styles.icon} />
           </a>
         </li>
         <li>
           <a href="/">
-            <img src={telegramicon} alt="telegram" />
+            <img src={telegramicon} alt="telegram" className={styles.icon} />
           </a>
         </li>
       </ul>

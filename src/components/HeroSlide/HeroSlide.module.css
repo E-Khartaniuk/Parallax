@@ -18,16 +18,9 @@
   font-weight: 500;
   line-height: 100%;
 
-  /* margin-top: 320px; */
-
   margin-top: calc(100vh / 3.5);
 
-  background: linear-gradient(
-    109deg,
-    #b53ea4 -2.82%,
-    #fc6f32 34.48%,
-    #ff4a59 93.08%
-  );
+  background: var(--title-gradient);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -39,12 +32,7 @@
 .heroTitlSecondState {
   margin-top: calc(100vh / 6);
 
-  background: linear-gradient(
-    109deg,
-    hsla(309, 100%, 92%, 1),
-    hsla(18, 100%, 85%, 1),
-    hsla(355, 100%, 87%, 1)
-  );
+  background: var(--title-second-color);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -65,7 +53,7 @@
   font-weight: 500;
   line-height: normal;
 
-  color: white;
+  color: var(--white);
   text-decoration: none;
 
   width: 96px;
@@ -76,12 +64,7 @@
 
 .tryNow:hover,
 .tryNow:focus {
-  background: linear-gradient(
-    106deg,
-    #963488 -12.33%,
-    #fc6f32 50.28%,
-    #ff4a59 114.17%
-  );
+  background: var(--button-gradient);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -89,7 +72,7 @@
 
 .description {
   margin: 36px 0px;
-  color: #fff;
+  color: var(--white);
   font-family: Inter;
   font-size: clamp(12px, 4vw, 24px);
   font-style: normal;
@@ -116,7 +99,7 @@
   padding: 20px;
   margin: 0 10px;
   text-align: center;
-  color: #fff;
+  color: var(--white);
   height: 200px;
   display: flex;
   flex-direction: column;

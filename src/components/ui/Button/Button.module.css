@@ -1,35 +1,33 @@
 .bySaltButton {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  gap: 8px;
 
+  /* border: 2px solid var(--main, #963488);
+  background: rgba(2, 4, 9, 0.2); */
+
+  background: linear-gradient(rgb(2, 4, 9), rgb(2, 4, 9)) padding-box,
+    linear-gradient(to right, #b53ea4 3.07%, #fc6f32 47.61%, #ff4a59 93.05%)
+      border-box;
   border-radius: 91px;
-  border: 2px solid var(--main, #963488);
-  background: rgba(2, 4, 9, 0.2);
+  border: 2px solid transparent;
 
   padding: 22px 48px;
   width: fit-content;
   height: 75px;
 
-  color: #fff;
+  color: var(--white);
 
   font-family: Inter;
   font-size: 24px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  cursor: pointer;
 }
 
 .bySaltButton:hover {
-  border: 2px solid var(--main, #963488);
-  background: linear-gradient(
-    106deg,
-    #963488 -12.33%,
-    #fc6f32 50.28%,
-    #ff4a59 114.17%
-  );
+  /* border: 2px solid var(--main, #963488); */
+  background: var(--button-gradient);
 }
 
 @media (max-width: 768px) {

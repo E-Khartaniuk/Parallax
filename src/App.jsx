@@ -10,8 +10,7 @@ import { useState } from "react";
 import earth from "./img/moon.png";
 import moon from "./img/image 122.png";
 import bottomEarth from "./img/bottom earth.png";
-import blueDecorationBG from "./img/blueDecorationBG.svg";
-import redDecorationBG from "./img/redDecorationBG.svg";
+
 import {
   bottomEarthStyles,
   earthStyles,
@@ -38,12 +37,12 @@ function App() {
     setIsFirstSlideMoove(true);
 
     if (scrollStep === 0) {
-      setIsHeroListVisible(true); // Показываем список
-      setScrollStep(1); // Следующий шаг
+      setIsHeroListVisible(true);
+      setScrollStep(1);
       setActiveScrol(true);
     } else if (scrollStep === 1) {
-      setActiveScrol(true); // Разрешаем свайп
-      setScrollStep(2); // Третий скрол уже уйдёт
+      setActiveScrol(true);
+      setScrollStep(2);
     }
 
     setTimeout(() => {
@@ -55,25 +54,22 @@ function App() {
     setActiveIndex(swiper.activeIndex);
 
     if (swiper.activeIndex !== 0) {
-      setScrollStep(2); // Дальше можно скроллить спокойно
+      setScrollStep(2);
     } else {
       setActiveScrol(false);
       setIsHeroListVisible(false);
-      setScrollStep(0); // Вернулись на первый слайд — снова по шагам
+      setScrollStep(0);
     }
   };
 
-  const maxOffset = 60; // Максимальный сдвиг фона в процентах
+  const maxOffset = 60;
   const backgroundOffset = (activeIndex / (slidesCount - 1)) * maxOffset;
-  const earthOffset = activeIndex * 200;
-
-  console.log(activeIndex);
 
   return (
     <div
       style={{ position: "relative", overflow: "hidden" }}
       onWheel={handleWheel}>
-      {/* Фон */}
+      {/* background */}
       <div
         className="background"
         style={{
@@ -85,7 +81,7 @@ function App() {
         src={earth}
         alt="earth"
         className="earthBackground"
-        style={earthStyles(earthOffset, isHeroListVisible, activeIndex)}
+        style={earthStyles(isHeroListVisible, activeIndex)}
       />
       {/* moon */}
       <img
@@ -94,7 +90,7 @@ function App() {
         className="moon"
         style={moonStyles(activeIndex, slidesCount)}
       />
-
+      {/* bottomEarth */}
       <img
         src={bottomEarth}
         alt="earth"

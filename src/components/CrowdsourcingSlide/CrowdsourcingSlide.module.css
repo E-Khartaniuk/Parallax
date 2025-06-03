@@ -5,16 +5,15 @@
 }
 
 .title {
-  /* margin-top: 300px; */
   margin-top: clamp(100px, 22vw, 300px);
   max-width: 1050px;
 
-  color: #fff;
+  color: var(--white);
   font-family: "Clash Grotesk";
   font-size: clamp(32px, 6vw, 64px);
   font-style: normal;
   font-weight: 500;
-  line-height: 110%; /* 70.4px */
+  line-height: 110%;
 }
 
 .decrption {
@@ -24,7 +23,7 @@
   flex-direction: column;
   gap: 20px;
   max-width: 1140px;
-  color: #fff;
+  color: var(--white);
   font-family: Inter;
   font-size: clamp(12px, 2.5vw, 24px);
   font-style: normal;
@@ -41,11 +40,11 @@
     margin-top: clamp(100px, 22vh, 300px);
     max-width: 1050px;
 
-    color: #fff;
+    color: var(--white);
     font-family: "Clash Grotesk";
     font-size: clamp(32px, 6vw, 64px);
     font-style: normal;
     font-weight: 500;
-    line-height: 110%; /* 70.4px */
+    line-height: 110%;
   }
 }

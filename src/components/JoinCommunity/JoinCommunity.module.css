@@ -8,7 +8,7 @@
   margin-top: clamp(100px, 22vw, 300px);
   max-width: 1050px;
 
-  color: #fff;
+  color: var(--white);
   font-family: "Clash Grotesk";
   font-size: clamp(32px, 6vw, 64px);
   font-style: normal;
@@ -25,7 +25,7 @@
   flex-direction: column;
   gap: 20px;
 
-  color: #fff;
+  color: var(--white);
   font-family: Inter;
   font-size: clamp(12px, 2.5vw, 24px);
   font-style: normal;
@@ -42,20 +42,29 @@
   cursor: pointer;
 }
 
+.icon {
+  width: clamp(44px, 5vw, 64px);
+  height: clamp(44px, 5vw, 64px);
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 0 32px;
+  }
+
+  .decrption {
+    margin-bottom: 16px;
   }
 
   .title {
     margin-top: clamp(100px, 22vh, 300px);
     max-width: 1050px;
 
-    color: #fff;
+    color: var(--white);
     font-family: "Clash Grotesk";
     font-size: clamp(32px, 6vw, 64px);
     font-style: normal;
     font-weight: 500;
-    line-height: 110%; /* 70.4px */
+    line-height: 110%;
   }
 }

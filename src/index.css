@@ -23,3 +23,29 @@ body {
 ul {
   list-style: none;
 }
+:root {
+  --white: white;
+
+  --main: #963488;
+
+  --title-gradient: linear-gradient(
+    109deg,
+    #b53ea4 3.07%,
+    #fc6f32 47.61%,
+    #ff4a59 93.05%
+  );
+
+  --title-second-color: linear-gradient(
+    109deg,
+    hsla(309, 100%, 92%, 1),
+    hsla(18, 100%, 85%, 1),
+    hsla(355, 100%, 87%, 1)
+  );
+
+  --button-gradient: linear-gradient(
+    106deg,
+    #963488 -12.33%,
+    #fc6f32 50.28%,
+    #ff4a59 114.17%
+  );
+}

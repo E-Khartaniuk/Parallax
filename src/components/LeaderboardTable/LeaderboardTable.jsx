@@ -4,24 +4,28 @@ import renderChangeIcon from "../ui/ChangeStatus/ChangeStatus";
 
 function LeaderboardTable({ showMore }) {
   const [data, setData] = useState([]);
-  const [animationKey, setAnimationKey] = useState("fade-in");
+  const [visibleData, setVisibleData] = useState([]);
+  const [animatingOut, setAnimatingOut] = useState(false);
 
   useEffect(() => {
     fetch("/Parallax/api/leaderboard.json")
       .then((res) => res.json())
-      .then(setData)
-      .catch((err) => console.error("Ошибка загрузки JSON:", err));
+      .then((json) => {
+        setData(json);
+        setVisibleData(showMore ? json.slice(8, 16) : json.slice(0, 8));
+      })
+      .catch((err) => console.error("error loading JSON:", err));
   }, []);
 
-  const displayedData = showMore ? data.slice(8, 16) : data.slice(0, 8);
-
   useEffect(() => {
-    setAnimationKey("fade-out");
-    const timer = setTimeout(() => {
-      setAnimationKey("fade-in");
+    setAnimatingOut(true);
+    const timeout = setTimeout(() => {
+      setVisibleData(showMore ? data.slice(8, 16) : data.slice(0, 8));
+      setAnimatingOut(false);
     }, 200);
-    return () => clearTimeout(timer);
-  }, [showMore]);
+
+    return () => clearTimeout(timeout);
+  }, [showMore, data]);
 
   return (
     <div className={styles.container}>
@@ -42,8 +46,10 @@ function LeaderboardTable({ showMore }) {
           </tr>
         </thead>
         <tbody>
-          {displayedData.map((model) => (
-            <tr key={model.rank} className={`${styles[animationKey]}`}>
+          {visibleData.map((model) => (
+            <tr
+              key={model.rank}
+              className={animatingOut ? styles.fadeOut : styles.fadeIn}>
               <td>{renderChangeIcon(model.change)}</td>
               <td>{model.rank}</td>
               <td>{model.modelName}</td>

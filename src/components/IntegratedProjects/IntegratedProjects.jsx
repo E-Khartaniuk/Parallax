@@ -15,9 +15,6 @@ function IntegratedProjects({ isActive }) {
         className={`${styles.list} ${
           isActive ? styles.listActive : styles.listInactive
         }`}>
-        {/* <li className={styles.listItem}>
-          <img src={rndr} alt="rndr" className={styles.item} />
-        </li> */}
         <li className={`${styles.listItem} ${styles.firsListItem}`}>
           <img src={telegram} alt="telegram" className={styles.item} />
         </li>

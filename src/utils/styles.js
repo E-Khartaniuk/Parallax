@@ -10,25 +10,25 @@ export function slideStyle() {
   };
 }
 
-export function earthStyles(earthOffset, isHeroListVisible, activeIndex) {
-  let moveValue = "7vw";
+export function earthStyles(isHeroListVisible, activeIndex) {
+  let moveValue = "14vh";
 
   let opacity = 1;
 
   if (isHeroListVisible && activeIndex === 0) {
-    moveValue = "-2vw";
+    moveValue = "-0vh";
   } else if (activeIndex === 1) {
-    moveValue = "-9vw";
+    moveValue = "-12vh";
   } else if (activeIndex === 2) {
-    moveValue = "-17vw";
+    moveValue = "-18vw";
   } else if (activeIndex === 3) {
-    moveValue = "-50vw";
+    moveValue = "-65vh";
     opacity = 1;
   } else if (activeIndex === 4) {
-    moveValue = "-100vw";
+    moveValue = "-900vh";
     opacity = 0;
   } else if (activeIndex === 5) {
-    moveValue = "-100vw";
+    moveValue = "-100vh";
     opacity = 0;
   }
 
@@ -43,46 +43,6 @@ export function earthStyles(earthOffset, isHeroListVisible, activeIndex) {
     pointerEvents: "none",
   };
 }
-
-// export function earthStyles(earthOffset, isHeroListVisible, activeIndex) {
-//   let moveValue = "150px";
-
-//   if (isHeroListVisible && activeIndex === 0) {
-//     moveValue = "0px";
-//   } else if (activeIndex === 1) {
-//     moveValue = "-100px";
-//   } else if (activeIndex === 2) {
-//     moveValue = "-250px";
-//   } else if (activeIndex === 3) {
-//     moveValue = "-720px";
-//   } else if (activeIndex === 4) {
-//     moveValue = "-2000px";
-//   } else if (activeIndex === 5) {
-//     moveValue = "-2000px";
-//   }
-
-//   return {
-//     position: "fixed",
-//     top: moveValue,
-//     left: "75%",
-//     transform: "translateX(-50%)",
-//     transition: "top 0.6s ease-out",
-//     zIndex: -1,
-//     pointerEvents: "none",
-//   };
-// }
-
-// export function earthStyles(earthOffset, isHeroListVisible) {
-//   return {
-//     position: "fixed",
-//     top: `${50 - earthOffset}px`,
-//     left: "85%",
-//     transform: "translateX(-50%)",
-//     transition: "top 0.6s ease-out",
-//     zIndex: -1,
-//     pointerEvents: "none",
-//   };
-// }
 
 export function moonStyles(activeIndex) {
   let moveValue = "-600px";

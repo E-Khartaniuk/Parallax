@@ -5,12 +5,11 @@
   gap: 32px;
   justify-content: center;
   align-items: center;
-  /* padding: 0 16px;  */
 }
 
 .listitem {
   display: flex;
-  /* width: 564.317px; */
+
   width: calc((100% - 96px) / 3);
 
   padding: 32px;
@@ -34,7 +33,7 @@
 }
 
 .value {
-  color: #fff;
+  color: var(--white);
 
   text-align: center;
   font-family: Inter;
@@ -45,7 +44,7 @@
 }
 
 .description {
-  color: #fff;
+  color: var(--white);
 
   font-family: Inter;
   font-size: clamp(16px, 3vw, 18px);
@@ -54,13 +53,13 @@
   line-height: normal;
 }
 
-/* Появление */
+/* Appearance */
 .showitem {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Задержка появления */
+/* Delayed appearance */
 .item1 {
   transition-delay: 0.2s;
 }

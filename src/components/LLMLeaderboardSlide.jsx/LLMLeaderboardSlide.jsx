@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import styles from "./LLMLeaderboardSlide.module.css";
 import LeaderboardTable from "../LeaderboardTable/LeaderboardTable";
 import Button from "../ui/Button/Button";
-import ArrowDown from "../ui/ChangeSign/ArrowDown";
+import Arrow from "../ui/ChangeSign/Arrow";
 
 function LLMLeaderboardSlide() {
   const [showMore, setShowMore] = useState(false);
 
   const handleShowMore = () => {
-    setShowMore((prev) => !prev); // Переключаем состояние между true и false
+    setShowMore((prev) => !prev);
   };
 
   return (
@@ -24,11 +24,17 @@ function LLMLeaderboardSlide() {
       </p>
       <LeaderboardTable showMore={showMore} />
       <div className={styles.loadMoreWrapper}>
-        <span className={styles.fullLeaderboard}>
-          {showMore ? "View full leaderboard" : ""}
+        <span
+          className={`${styles.fullLeaderboard} ${
+            showMore ? styles.visible : ""
+          }`}>
+          View full leaderboard
         </span>
-        <button className={styles.arrowDown} onClick={handleShowMore}>
-          <ArrowDown arrowColor="white" />
+
+        <button
+          className={`${styles.arrowDown} ${showMore ? styles.buttonUp : ""}`}
+          onClick={handleShowMore}>
+          <Arrow />
         </button>
       </div>
     </section>

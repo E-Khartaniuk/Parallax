@@ -9,7 +9,7 @@
 .table {
   width: 100%;
   overflow-x: auto;
-  color: #fff;
+  color: var(--white);
   text-overflow: ellipsis;
   font-family: Inter;
   font-size: 16px;
@@ -39,12 +39,14 @@ tbody tr:nth-child(odd) {
   background: rgba(201, 217, 255, 0.08);
 }
 
-.fade-out {
-  animation: fadeOut 0.2s ease-out forwards;
+.fadeOut {
+  opacity: 1;
+  animation: fadeOut 0.2s ease-in forwards;
 }
 
-.fade-in {
-  animation: fadeIn 0.3s ease-in forwards;
+.fadeIn {
+  opacity: 0;
+  animation: fadeIn 0.2s ease-out forwards;
 }
 
 @keyframes fadeOut {
@@ -66,17 +68,5 @@ tbody tr:nth-child(odd) {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@media (max-width: 1114px) {
-  .table {
-    font-size: 14px;
-  }
-
-  th,
-  td {
-    padding: 16px 8px;
-    text-align: right;
   }
 }
