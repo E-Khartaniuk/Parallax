@@ -6,14 +6,18 @@ import LLMLeaderboardSlide from "./components/LLMLeaderboardSlide.jsx/LLMLeaderb
 import ProjectsIntegratedSlide from "./components/ProjectsIntegratedSlide/ProjectsIntegratedSlide";
 import "swiper/css";
 import { SwiperSlide, Swiper } from "swiper/react";
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import earth from "./img/moon.png";
 import moon from "./img/image 122.png";
 import bottomEarth from "./img/bottom earth.png";
+import rocket from "../src/img/rocket.png";
+import comet from "../src/img/comet.png";
 import {
   bottomEarthStyles,
+  cometStyles,
   earthStyles,
   moonStyles,
+  rocketStyles,
   slideStyle,
 } from "./utils/styles";
 import JoinCommunity from "./components/JoinCommunity/JoinCommunity";
@@ -54,20 +58,35 @@ function App() {
         src={earth}
         alt="earth"
         className="earthBackground"
-        style={earthStyles(isHeroListVisible, activeIndex)}
+        style={earthStyles(activeIndex)}
       />
       <img
         src={moon}
         alt="moon"
         className="moon"
-        style={moonStyles(activeIndex, slidesCount)}
+        style={moonStyles(activeIndex)}
       />
       <img
         src={bottomEarth}
         alt="earth"
         className="earth"
-        style={bottomEarthStyles(activeIndex, slidesCount)}
+        style={bottomEarthStyles(activeIndex)}
       />
+
+      <img
+        src={rocket}
+        alt="rocket"
+        className="rocket"
+        style={rocketStyles(activeIndex)}
+      />
+
+      <img
+        src={comet}
+        alt="comet"
+        className="comet"
+        style={cometStyles(activeIndex)}
+      />
+
       <RedDecorationElement
         activeIndex={activeIndex}
         isHeroListVisible={isHeroListVisible}

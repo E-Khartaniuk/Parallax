@@ -26,6 +26,12 @@
   height: clamp(150px, 33vw, 485px);
 }
 
+.rocket {
+  height: 300px;
+  width: 60px;
+  left: 33%;
+}
+
 @media (min-width: 320px) {
   .earthBackground {
     width: 400px;

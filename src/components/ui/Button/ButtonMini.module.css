@@ -1,0 +1,25 @@
+@import url("./Button.module.css");
+.bySaltButton {
+  padding: 14px 32px 16px 32px;
+  font-size: 18px;
+  height: 52px;
+}
+
+.bySaltButton:hover {
+  background: var(--button-gradient);
+}
+
+@media (max-width: 768px) {
+  .bySaltButton {
+    padding: 12px 22px;
+    font-size: 14px;
+    height: 55px;
+  }
+}
+@media (max-width: 480px) {
+  .bySaltButton {
+    padding: 10px 8px;
+    font-size: 10px;
+    height: 42px;
+  }
+}

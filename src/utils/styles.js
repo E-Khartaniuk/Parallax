@@ -10,7 +10,7 @@ export function slideStyle() {
   };
 }
 
-export function earthStyles(isHeroListVisible, activeIndex) {
+export function earthStyles(activeIndex) {
   let moveValue = "14vh";
 
   let opacity = 1;
@@ -38,10 +38,62 @@ export function earthStyles(isHeroListVisible, activeIndex) {
   return {
     position: "fixed",
     opacity: opacity,
-    // left: "50%",
+
     transform: `translateY(${moveValue})`,
     transition: "transform 0.6s ease-out, opacity 0.7s ease-out",
     zIndex: -1,
+    pointerEvents: "none",
+  };
+}
+
+export function rocketStyles(activeIndex) {
+  let moveValueY = "230vh";
+
+  let opacity = 0;
+
+  if (activeIndex === 4) {
+    moveValueY = "42vh";
+
+    opacity = 1;
+  } else if (activeIndex === 5) {
+    moveValueY = "-110vh";
+
+    opacity = 0;
+  }
+
+  return {
+    position: "fixed",
+    opacity: opacity,
+    transform: `translateY(${moveValueY})`,
+    transition: "transform 1s ease-out, opacity 2s ease-out",
+    zIndex: "-1",
+    pointerEvents: "none",
+  };
+}
+
+export function cometStyles(activeIndex) {
+  let moveValueX = "-48vh";
+  let moveValueY = "-21vh";
+
+  let opacity = 0;
+
+  if (activeIndex === 3) {
+    moveValueX = "17vh";
+    moveValueY = "13vh";
+
+    opacity = 1;
+  } else if (activeIndex === 4) {
+    moveValueX = "203vh";
+    moveValueY = "100vh";
+
+    opacity = 0;
+  }
+  return {
+    position: "fixed",
+    opacity: opacity,
+    transform: `translate(${moveValueX}, ${moveValueY})`,
+    transition: "transform 0.6s ease-out, opacity 1s",
+    zIndex: "-1",
     pointerEvents: "none",
   };
 }
@@ -57,17 +109,6 @@ export function moonStyles(activeIndex) {
     moveValue = "-130vh";
     opacity = 0;
   }
-
-  //   let moveValue = "200vh";
-  // let opacity = 1;
-
-  // if (activeIndex === 4) {
-  //   moveValue = "30vh";
-  //   opacity = 1;
-  // } else if (activeIndex === 5) {
-  //   moveValue = "-130vh";
-  //   opacity = 0;
-  // }
 
   return {
     position: "fixed",
