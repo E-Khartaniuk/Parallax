@@ -17,6 +17,7 @@
   will-change: transform;
   width: 1016px;
   height: 1016px;
+  left: 50%;
 }
 
 .moon {
@@ -29,6 +30,7 @@
   .earthBackground {
     width: 400px;
     height: 400px;
+    left: 30%;
   }
 }
 
@@ -36,6 +38,7 @@
   .earthBackground {
     width: 600px;
     height: 600px;
+    left: 40%;
   }
 }
 

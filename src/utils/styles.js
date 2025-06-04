@@ -3,7 +3,7 @@ export function slideStyle() {
     color: "#fff",
     fontSize: "3rem",
     height: "100vh",
-    width: "100vw",
+    maxidth: "100vw",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -26,7 +26,7 @@ export function earthStyles(isHeroListVisible, activeIndex) {
     opacity = 1;
   } else if (activeIndex === 4) {
     moveValue = "-65vh";
-    opacity = 0;
+    opacity = 1;
   } else if (activeIndex === 5) {
     moveValue = "-120vh";
     opacity = 0;
@@ -38,7 +38,7 @@ export function earthStyles(isHeroListVisible, activeIndex) {
   return {
     position: "fixed",
     opacity: opacity,
-    left: "50%",
+    // left: "50%",
     transform: `translateY(${moveValue})`,
     transition: "transform 0.6s ease-out, opacity 0.7s ease-out",
     zIndex: -1,

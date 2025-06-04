@@ -1,6 +1,6 @@
 .container {
   height: 100vh;
-  max-width: 1920px;
+  width: 1920px;
   padding: 0 80px;
 }
 
@@ -33,6 +33,10 @@
   line-height: clamp(14px, 3vw, 32px);
 }
 
+.decrption p {
+  max-width: 700px;
+}
+
 .iconsWrapper {
   display: flex;
   gap: 32px;
@@ -47,6 +51,12 @@
   height: clamp(44px, 5vw, 64px);
 }
 
+@media (max-width: 1024px) {
+  .decrption p {
+    max-width: 500px;
+  }
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 0 32px;
@@ -54,6 +64,10 @@
 
   .decrption {
     margin-bottom: 16px;
+  }
+
+  .decrption p {
+    max-width: 400px;
   }
 
   .title {
