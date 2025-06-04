@@ -77,9 +77,22 @@ Once the application is running, open your web browser and navigate to the displ
 
 ## 📸 Screenshots
 
+![Hero](/src/img/screenshots/Screenshot%201.png)
+
+![Projects integrated](/src/img/screenshots/Screenshot%202.png)
+
+![Crowdsourcing](/src/img/screenshots/Screenshot%203.png)
+
+![LLM Leaderboard](/src/img/screenshots/Screenshot%204.png)
+
+![Join our community](/src/img/screenshots/Screenshot%205.png)
+
+![Footer](/src/img/screenshots/Screenshot%206.png)
+
 ## 👨‍💻 Author
 
 Yevhenii Khartaniuk
+
 [LinkedIn Profile](https://www.linkedin.com/in/yevhenii-khartaniuk-45b279251/)
 
 ## 📜 License
