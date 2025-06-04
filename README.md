@@ -57,7 +57,6 @@ Before you begin, ensure you have the following installed:
 
 2.  **Install project dependencies:**
 
-
     ```bash
     npm install
     # or
@@ -71,3 +70,18 @@ To start the development server and run the application:
 ```bash
 npm run dev
 ```
+
+## 📝 Usage
+
+Once the application is running, open your web browser and navigate to the displayed local host address. The application features an intuitive vertical scrolling interface. Use your mouse wheel, trackpad, or touch gestures to smoothly transition between the different sections and explore the compelling content.
+
+## 📸 Screenshots
+
+## 👨‍💻 Author
+
+Yevhenii Khartaniuk
+[LinkedIn Profile](https://www.linkedin.com/in/yevhenii-khartaniuk-45b279251/)
+
+## 📜 License
+
+This project is open-source and distributed under the MIT License. For more details, please refer to the LICENSE.md file in the repository root.
