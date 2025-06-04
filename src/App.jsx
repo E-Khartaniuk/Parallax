@@ -6,7 +6,7 @@ import LLMLeaderboardSlide from "./components/LLMLeaderboardSlide.jsx/LLMLeaderb
 import ProjectsIntegratedSlide from "./components/ProjectsIntegratedSlide/ProjectsIntegratedSlide";
 import "swiper/css";
 import { SwiperSlide, Swiper } from "swiper/react";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import earth from "./img/moon.png";
 import moon from "./img/image 122.png";
 import bottomEarth from "./img/bottom earth.png";
@@ -25,11 +25,13 @@ import BlueDecorationElement from "./components/ui/ColorDecorationElements/blueD
 function App() {
   const slidesCount = 5;
   const [activeIndex, setActiveIndex] = useState(0);
-  const [activeScrol, setActiveScrol] = useState(false);
+  const [activeScrol, setActiveScrol] = useState(true);
   const [isFirstSlideMoove, setIsFirstSlideMoove] = useState(false);
   const [isHeroListVisible, setIsHeroListVisible] = useState(false);
-
   const [scrollStep, setScrollStep] = useState(0);
+
+  const touchStartY = useRef(null);
+  const touchEndY = useRef(null);
 
   const handleWheel = () => {
     if (activeIndex !== 0 || isFirstSlideMoove) return;
@@ -50,6 +52,20 @@ function App() {
     }, 600);
   };
 
+  const handleTouchStart = (e) => {
+    touchStartY.current = e.touches[0].clientY;
+  };
+
+  const handleTouchEnd = (e) => {
+    touchEndY.current = e.changedTouches[0].clientY;
+    const deltaY = touchStartY.current - touchEndY.current;
+
+    if (deltaY > 30 && activeIndex === 0 && scrollStep < 2) {
+      // свайп вверх
+      handleWheel();
+    }
+  };
+
   const handleSlideChange = (swiper) => {
     setActiveIndex(swiper.activeIndex);
 
@@ -68,7 +84,9 @@ function App() {
   return (
     <div
       style={{ position: "relative", overflow: "hidden" }}
-      onWheel={handleWheel}>
+      onWheel={handleWheel}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}>
       {/* background */}
       <div
         className="background"
