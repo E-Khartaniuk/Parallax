@@ -1,4 +1,3 @@
-import React from "react";
 import IntegratedProjects from "../IntegratedProjects/IntegratedProjects";
 import style from "./ProjectsIntegratedSlide.module.css";
 

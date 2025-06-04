@@ -1,5 +1,3 @@
-import React from "react";
-
 function BlueDecorationElement({ isHeroListVisible, activeIndex }) {
   let rotate = "-112.472";
   let bottom = "300px";

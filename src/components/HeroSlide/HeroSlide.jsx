@@ -1,5 +1,3 @@
-import React from "react";
-
 import Button from "../ui/Button/Button";
 import HeroList from "../HeroList/HeroList";
 import ButtonMini from "../ui/Button/ButtonMini";

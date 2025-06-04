@@ -1,6 +1,4 @@
-import React from "react";
-
-function RedDecorationElement({ isHeroListVisible, activeIndex }) {
+function RedDecorationElement({ activeIndex }) {
   let moveValue = "100px";
   let rotate = "-112.472";
   let bottom = "-800px";

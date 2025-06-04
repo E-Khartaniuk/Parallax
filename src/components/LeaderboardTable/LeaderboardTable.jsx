@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./LeaderboardTable.module.css";
 import renderChangeIcon from "../ui/ChangeStatus/ChangeStatus";
 

@@ -1,4 +1,3 @@
-import React from "react";
 import ArrowUp from "../ChangeSign/ArrowUp";
 import ArrowDown from "../ChangeSign/ArrowDown";
 import Dash from "../ChangeSign/Dash";

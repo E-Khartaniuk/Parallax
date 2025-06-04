@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./JoinCommunity.module.css";
 import xIcon from "../../img/x icon.png";
 import telegramicon from "../../img/telegram icon.png";

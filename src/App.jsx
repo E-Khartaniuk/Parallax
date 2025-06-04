@@ -1,30 +1,17 @@
-import { Keyboard, Mousewheel } from "swiper/modules";
 import "./App.css";
-import CrowdsourcingSlide from "./components/CrowdsourcingSlide/CrowdsourcingSlide";
-import HeroSlide from "./components/HeroSlide/HeroSlide";
-import LLMLeaderboardSlide from "./components/LLMLeaderboardSlide.jsx/LLMLeaderboardSlide";
-import ProjectsIntegratedSlide from "./components/ProjectsIntegratedSlide/ProjectsIntegratedSlide";
 import "swiper/css";
+import { Keyboard, Mousewheel } from "swiper/modules";
 import { SwiperSlide, Swiper } from "swiper/react";
 import { useState } from "react";
-import earth from "./img/moon.png";
-import moon from "./img/image 122.png";
-import bottomEarth from "./img/bottom earth.png";
-import rocket from "../src/img/rocket.png";
-import comet from "../src/img/comet.png";
-import {
-  bottomEarthStyles,
-  cometStyles,
-  earthStyles,
-  moonStyles,
-  rocketStyles,
-  slideStyle,
-} from "./utils/styles";
+import { slideStyle } from "./utils/styles";
+import Blank from "./components/Blank/Blank";
+import HeroSlide from "./components/HeroSlide/HeroSlide";
+import ProjectsIntegratedSlide from "./components/ProjectsIntegratedSlide/ProjectsIntegratedSlide";
+import CrowdsourcingSlide from "./components/CrowdsourcingSlide/CrowdsourcingSlide";
+import LLMLeaderboardSlide from "./components/LLMLeaderboardSlide.jsx/LLMLeaderboardSlide";
 import JoinCommunity from "./components/JoinCommunity/JoinCommunity";
 import Footer from "./components/Footer/Footer";
-import RedDecorationElement from "./components/ui/ColorDecorationElements/redDecorationElement";
-import BlueDecorationElement from "./components/ui/ColorDecorationElements/blueDecorationElement";
-import Blank from "./components/Blank/Blank";
+import BackgroundImages from "./components/BackgroundImages/BackgroundImages";
 
 function App() {
   const slidesCount = 5;
@@ -45,56 +32,15 @@ function App() {
   const backgroundOffset = (activeIndex / (slidesCount - 1)) * maxOffset;
 
   return (
-    <div
-      id="swiper-container"
-      style={{ position: "relative", overflow: "hidden" }}>
+    <div style={{ position: "relative", overflow: "hidden" }}>
       <div
         className="background"
         style={{
           backgroundPosition: `center ${backgroundOffset}%`,
         }}
       />
-      <img
-        src={earth}
-        alt="earth"
-        className="earthBackground"
-        style={earthStyles(activeIndex)}
-      />
-      <img
-        src={moon}
-        alt="moon"
-        className="moon"
-        style={moonStyles(activeIndex)}
-      />
-      <img
-        src={bottomEarth}
-        alt="earth"
-        className="earth"
-        style={bottomEarthStyles(activeIndex)}
-      />
 
-      <img
-        src={rocket}
-        alt="rocket"
-        className="rocket"
-        style={rocketStyles(activeIndex)}
-      />
-
-      <img
-        src={comet}
-        alt="comet"
-        className="comet"
-        style={cometStyles(activeIndex)}
-      />
-
-      <RedDecorationElement
-        activeIndex={activeIndex}
-        isHeroListVisible={isHeroListVisible}
-      />
-      <BlueDecorationElement
-        activeIndex={activeIndex}
-        isHeroListVisible={isHeroListVisible}
-      />
+      <BackgroundImages activeIndex={activeIndex} />
 
       <HeroSlide
         activeIndex={activeIndex}
@@ -111,12 +57,11 @@ function App() {
         modules={[Mousewheel, Keyboard]}
         style={{ height: "100vh", willChange: "transform" }}>
         <SwiperSlide style={slideStyle()}>
-          <Blank></Blank>
+          <Blank />
         </SwiperSlide>
         <SwiperSlide style={slideStyle()}>
-          <Blank></Blank>
+          <Blank />
         </SwiperSlide>
-
         <SwiperSlide style={slideStyle()}>
           <ProjectsIntegratedSlide isActive={activeIndex === 2} />
         </SwiperSlide>

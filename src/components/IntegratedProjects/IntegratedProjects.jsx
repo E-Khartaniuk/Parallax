@@ -1,5 +1,3 @@
-import React from "react";
-
 import styles from "./IntegratedProjects.module.css";
 
 import solana from "../../img/solana.png";

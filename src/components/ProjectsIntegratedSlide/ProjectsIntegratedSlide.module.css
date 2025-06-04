@@ -1,5 +1,5 @@
 .title {
-  color: #fff;
+  color: var(--white);
   text-align: center;
   font-family: "Clash Grotesk";
 

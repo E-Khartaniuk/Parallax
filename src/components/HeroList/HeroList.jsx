@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./HeroList.module.css";
 
 function HeroList({ showList }) {
@@ -14,7 +13,6 @@ function HeroList({ showList }) {
           className={`${styles.listitem} ${styles[`item${i + 1}`]} ${
             showList ? styles.showitem : ""
           }`}>
-          {" "}
           <p className={styles.value}>{item.value}</p>
           <span className={styles.description}>{item.desc}</span>
         </li>

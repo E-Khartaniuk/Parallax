@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "./LLMLeaderboardSlide.module.css";
 import LeaderboardTable from "../LeaderboardTable/LeaderboardTable";
 import Button from "../ui/Button/Button";
