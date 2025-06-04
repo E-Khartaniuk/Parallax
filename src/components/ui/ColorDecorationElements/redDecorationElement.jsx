@@ -7,31 +7,31 @@ function RedDecorationElement({ isHeroListVisible, activeIndex }) {
   let left = "-46px";
   let opacity = "1";
 
-  if (isHeroListVisible && activeIndex === 0) {
+  if (activeIndex === 1) {
     rotate = "-64";
     bottom = "-800px";
     left = "-46px";
-  } else if (activeIndex === 1) {
-    opacity = "0.7";
-    bottom = "-595px";
-    left = "495px";
-    rotate = "-84.677";
   } else if (activeIndex === 2) {
     opacity = "0.7";
     bottom = "-595px";
     left = "495px";
     rotate = "-84.677";
   } else if (activeIndex === 3) {
+    opacity = "0.7";
+    bottom = "-595px";
+    left = "495px";
+    rotate = "-84.677";
+  } else if (activeIndex === 4) {
     opacity = "0.5";
     bottom = "540px";
     left = "111px";
     rotate = "-34.677";
-  } else if (activeIndex === 4) {
+  } else if (activeIndex === 5) {
     opacity = "0";
     bottom = "540px";
     left = "111px";
     rotate = "-34.677";
-  } else if (activeIndex === 5) {
+  } else if (activeIndex === 6) {
     moveValue = "-100vw";
     opacity = "0";
     rotate = "-160";

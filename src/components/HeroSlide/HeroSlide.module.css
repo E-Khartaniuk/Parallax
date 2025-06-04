@@ -1,37 +1,37 @@
 .heroSlide {
+  position: absolute;
   height: 100vh;
   min-width: 360px;
   max-width: 1920px;
   padding: 0 80px;
   display: flex;
   flex-direction: column;
+  transition: transform 0.6s ease-out;
+}
+
+.hideHeroSection {
+  transform: translateY(-100%);
 }
 
 .heroTitle {
   font-family: "Clash Grotesk";
-
   font-size: clamp(32px, 6vw, 128px);
-
   min-width: 320px;
   max-width: 1629px;
   font-style: normal;
   font-weight: 500;
   line-height: 100%;
-
   margin-top: calc(100vh / 3.5);
-
   background: var(--title-gradient);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
   transition: margin-top 0.6s ease, background 0.6s ease,
     -webkit-text-fill-color 0.6s ease;
 }
 
-.heroTitlSecondState {
+.heroTitleSecondState {
   margin-top: calc(100vh / 6);
-
   background: var(--title-second-color);
   background-clip: text;
   -webkit-background-clip: text;
@@ -46,19 +46,15 @@
 
 .tryNow {
   margin-left: 56px;
-
   font-family: Inter;
   font-size: 24px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-
   color: var(--white);
   text-decoration: none;
-
   width: 96px;
   height: 29px;
-
   transition: background 0.5s ease, -webkit-text-fill-color 0.5s ease;
 }
 
@@ -131,7 +127,7 @@
     margin: 14px 0px;
   }
 
-  .heroTitlSecondState {
+  .heroTitleSecondState {
     margin-top: calc(100vh / 8);
   }
   .horizontalList {

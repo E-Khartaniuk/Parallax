@@ -6,16 +6,11 @@ function BlueDecorationElement({ isHeroListVisible, activeIndex }) {
   let left = "24px";
   let opacity = "1";
 
-  if (isHeroListVisible && activeIndex === 0) {
+  if (activeIndex === 1) {
     rotate = "-82";
     bottom = "300px";
     left = "60px";
     opacity = "1";
-  } else if (activeIndex === 1) {
-    rotate = "-94";
-    bottom = "300px";
-    left = "170px";
-    opacity = "0.8";
   } else if (activeIndex === 2) {
     rotate = "-94";
     bottom = "300px";
@@ -25,10 +20,15 @@ function BlueDecorationElement({ isHeroListVisible, activeIndex }) {
     rotate = "-94";
     bottom = "300px";
     left = "170px";
-    opacity = "0";
+    opacity = "0.8";
   } else if (activeIndex === 4) {
+    rotate = "-94";
+    bottom = "300px";
+    left = "170px";
     opacity = "0";
   } else if (activeIndex === 5) {
+    opacity = "0";
+  } else if (activeIndex === 6) {
     opacity = "0";
   }
   return (

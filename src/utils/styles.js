@@ -15,20 +15,23 @@ export function earthStyles(isHeroListVisible, activeIndex) {
 
   let opacity = 1;
 
-  if (isHeroListVisible && activeIndex === 0) {
-    moveValue = "-0vh";
+  if (activeIndex === 0) {
+    moveValue = "14vh";
   } else if (activeIndex === 1) {
-    moveValue = "-12vh";
+    moveValue = "0vh";
   } else if (activeIndex === 2) {
-    moveValue = "-30vw";
+    moveValue = "-12vw";
   } else if (activeIndex === 3) {
-    moveValue = "-65vh";
+    moveValue = "-30vh";
     opacity = 1;
   } else if (activeIndex === 4) {
-    moveValue = "-120vh";
+    moveValue = "-65vh";
     opacity = 0;
   } else if (activeIndex === 5) {
-    moveValue = "-100vh";
+    moveValue = "-120vh";
+    opacity = 0;
+  } else if (activeIndex === 6) {
+    moveValue = "-120vh";
     opacity = 0;
   }
 
@@ -47,13 +50,24 @@ export function moonStyles(activeIndex) {
   let moveValue = "200vh";
   let opacity = 1;
 
-  if (activeIndex === 4) {
+  if (activeIndex === 5) {
     moveValue = "30vh";
     opacity = 1;
-  } else if (activeIndex === 5) {
+  } else if (activeIndex === 6) {
     moveValue = "-130vh";
     opacity = 0;
   }
+
+  //   let moveValue = "200vh";
+  // let opacity = 1;
+
+  // if (activeIndex === 4) {
+  //   moveValue = "30vh";
+  //   opacity = 1;
+  // } else if (activeIndex === 5) {
+  //   moveValue = "-130vh";
+  //   opacity = 0;
+  // }
 
   return {
     position: "fixed",
@@ -69,9 +83,9 @@ export function moonStyles(activeIndex) {
 export function bottomEarthStyles(activeIndex) {
   let moveValue = "-800px";
 
-  if (activeIndex === 4) {
+  if (activeIndex === 5) {
     moveValue = "-16vw";
-  } else if (activeIndex === 5) {
+  } else if (activeIndex === 6) {
     moveValue = "0vw";
   }
 

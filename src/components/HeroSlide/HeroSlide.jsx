@@ -3,13 +3,13 @@ import styles from "./HeroSlide.module.css";
 import Button from "../ui/Button/Button";
 import HeroList from "../HeroList/HeroList";
 
-function HeroSlide({ showList }) {
+function HeroSlide({ activeIndex, isHeroListVisible }) {
+  const titleClass = activeIndex >= 1 ? styles.heroTitleSecondState : "";
+  const sectionClass = activeIndex >= 2 ? styles.hideHeroSection : "";
+
   return (
-    <section className={styles.heroSlide}>
-      <h1
-        className={`${styles.heroTitle} ${
-          showList ? styles.heroTitlSecondState : ""
-        }`}>
+    <section className={`${styles.heroSlide} ${sectionClass}`}>
+      <h1 className={`${styles.heroTitle} ${titleClass}`}>
         A new economic primitive for funding decentralized AI
       </h1>
       <p className={styles.description}>
@@ -22,7 +22,7 @@ function HeroSlide({ showList }) {
           Try Now
         </a>
       </div>
-      <HeroList showList={showList} />
+      <HeroList showList={activeIndex === 1} />
     </section>
   );
 }
