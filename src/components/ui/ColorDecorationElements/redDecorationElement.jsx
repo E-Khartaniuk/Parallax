@@ -50,6 +50,7 @@ function RedDecorationElement({ isHeroListVisible, activeIndex }) {
           "bottom 0.6s ease-out, left 0.7s ease-out, transform 0.7s ease-out, opacity 0.7s ease-out",
         flexShrink: "0",
         position: "absolute",
+        willChange: "transform",
       }}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +62,7 @@ function RedDecorationElement({ isHeroListVisible, activeIndex }) {
           <path
             d="M568.09 619.365C530.631 782.576 318.608 868.115 189.734 637.352C60.8602 406.589 350.964 204.342 470.825 258.651C590.686 312.96 699.632 125.047 837.424 235.787C963.4 337.031 1046.33 603.841 850.796 584.669C690.066 568.909 605.549 456.153 568.09 619.365Z"
             fill="url(#paint0_linear_352_6490)"
-            fill-opacity="0.2"
+            fillOpacity="0.2"
           />
         </g>
         <defs>
@@ -72,8 +73,8 @@ function RedDecorationElement({ isHeroListVisible, activeIndex }) {
             width="1209.88"
             height="978.41"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            colorInterpolationFilters="sRGB">
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feBlend
               mode="normal"
               in="SourceGraphic"
@@ -92,8 +93,8 @@ function RedDecorationElement({ isHeroListVisible, activeIndex }) {
             x2="758.088"
             y2="196.209"
             gradientUnits="userSpaceOnUse">
-            <stop stop-color="#FC6F32" />
-            <stop offset="1" stop-color="#FF4A59" />
+            <stop stopColor="#FC6F32" />
+            <stop offset="1" stopColor="#FF4A59" />
           </linearGradient>
         </defs>
       </svg>

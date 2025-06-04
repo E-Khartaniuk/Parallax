@@ -20,12 +20,12 @@ export function earthStyles(isHeroListVisible, activeIndex) {
   } else if (activeIndex === 1) {
     moveValue = "-12vh";
   } else if (activeIndex === 2) {
-    moveValue = "-18vw";
+    moveValue = "-30vw";
   } else if (activeIndex === 3) {
     moveValue = "-65vh";
     opacity = 1;
   } else if (activeIndex === 4) {
-    moveValue = "-900vh";
+    moveValue = "-120vh";
     opacity = 0;
   } else if (activeIndex === 5) {
     moveValue = "-100vh";
@@ -34,47 +34,45 @@ export function earthStyles(isHeroListVisible, activeIndex) {
 
   return {
     position: "fixed",
-    top: moveValue,
     opacity: opacity,
-    left: "75%",
-    transform: "translateX(-50%)",
-    transition: "top 0.6s ease-out, opacity 0.7s ease-out",
+    left: "50%",
+    transform: `translateY(${moveValue})`,
+    transition: "transform 0.6s ease-out, opacity 0.7s ease-out",
     zIndex: -1,
     pointerEvents: "none",
   };
 }
 
 export function moonStyles(activeIndex) {
-  let moveValue = "-600px";
+  let moveValue = "200vh";
   let opacity = 1;
 
   if (activeIndex === 4) {
-    moveValue = "450px";
+    moveValue = "30vh";
     opacity = 1;
   } else if (activeIndex === 5) {
-    moveValue = "2100px";
+    moveValue = "-130vh";
     opacity = 0;
   }
 
   return {
     position: "fixed",
-    bottom: moveValue,
     opacity: opacity,
-    left: "77%",
-    transform: "translateX(-50%)",
-    transition: "bottom 1.2s ease-out, opacity 0.7s ease-out",
+    left: "65%",
+    transform: `translateY(${moveValue})`,
+    transition: "transform 1.5s ease-out, opacity 0.9s ease-in-out",
     zIndex: -1,
     pointerEvents: "none",
   };
 }
 
 export function bottomEarthStyles(activeIndex) {
-  let moveValue = "-800px"; // по умолчанию спрятано глубоко
+  let moveValue = "-800px";
 
   if (activeIndex === 4) {
-    moveValue = "-16vw"; // слегка выглядывает
+    moveValue = "-16vw";
   } else if (activeIndex === 5) {
-    moveValue = "0vw"; // сильно выглядывает
+    moveValue = "0vw";
   }
 
   return {

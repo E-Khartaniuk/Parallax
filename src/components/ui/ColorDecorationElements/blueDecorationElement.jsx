@@ -44,6 +44,7 @@ function BlueDecorationElement({ isHeroListVisible, activeIndex }) {
           "bottom 0.6s ease-out, left 0.7s ease-out, transform 0.7s ease-out, opacity 0.7s ease-out",
         flexShrink: "0",
         position: "absolute",
+        willChange: "transform",
       }}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +56,7 @@ function BlueDecorationElement({ isHeroListVisible, activeIndex }) {
           <path
             d="M627.691 648.792C623.657 816.198 433.046 942.443 260.592 742.144C88.1374 541.846 331.891 285.626 460.196 314.845C588.501 344.064 657.632 138.148 814.801 219.068C958.491 293.048 1093.14 537.862 897.731 558.214C737.1 574.943 631.724 481.385 627.691 648.792Z"
             fill="url(#paint0_linear_352_6491)"
-            fill-opacity="0.2"
+            fillOpacity="0.2"
           />
         </g>
         <defs>
@@ -66,8 +67,8 @@ function BlueDecorationElement({ isHeroListVisible, activeIndex }) {
             width="1194.46"
             height="1044.74"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            colorInterpolationFilters="sRGB">
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feBlend
               mode="normal"
               in="SourceGraphic"
@@ -86,8 +87,8 @@ function BlueDecorationElement({ isHeroListVisible, activeIndex }) {
             x2="688.708"
             y2="200.003"
             gradientUnits="userSpaceOnUse">
-            <stop stop-color="#32BFFC" />
-            <stop offset="1" stop-color="#005577" />
+            <stop stopColor="#32BFFC" />
+            <stop offset="1" stopColor="#005577" />
           </linearGradient>
         </defs>
       </svg>

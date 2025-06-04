@@ -6,9 +6,9 @@ function ArrowUp() {
       <path
         d="M12 5L18 11M12 5L6 11M12 5V19"
         stroke="#40FF75"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

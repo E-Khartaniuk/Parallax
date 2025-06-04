@@ -1,4 +1,5 @@
 .background {
+  will-change: transform;
   background-image: url(./img/bg.png);
   background-size: cover;
   background-repeat: no-repeat;
@@ -13,11 +14,13 @@
 }
 
 .earthBackground {
+  will-change: transform;
   width: 1016px;
   height: 1016px;
 }
 
 .moon {
+  will-change: transform;
   width: clamp(150px, 33vw, 485px);
   height: clamp(150px, 33vw, 485px);
 }

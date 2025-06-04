@@ -6,11 +6,10 @@ import LLMLeaderboardSlide from "./components/LLMLeaderboardSlide.jsx/LLMLeaderb
 import ProjectsIntegratedSlide from "./components/ProjectsIntegratedSlide/ProjectsIntegratedSlide";
 import "swiper/css";
 import { SwiperSlide, Swiper } from "swiper/react";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import earth from "./img/moon.png";
 import moon from "./img/image 122.png";
 import bottomEarth from "./img/bottom earth.png";
-
 import {
   bottomEarthStyles,
   earthStyles,
@@ -25,30 +24,27 @@ import BlueDecorationElement from "./components/ui/ColorDecorationElements/blueD
 function App() {
   const slidesCount = 5;
   const [activeIndex, setActiveIndex] = useState(0);
-  const [activeScrol, setActiveScrol] = useState(true);
-  const [isFirstSlideMoove, setIsFirstSlideMoove] = useState(false);
   const [isHeroListVisible, setIsHeroListVisible] = useState(false);
-  const [scrollStep, setScrollStep] = useState(0);
-
+  const swiperRef = useRef(null);
   const touchStartY = useRef(null);
   const touchEndY = useRef(null);
+  const isProcessing = useRef(false);
 
-  const handleWheel = () => {
-    if (activeIndex !== 0 || isFirstSlideMoove) return;
+  const handleWheel = (e) => {
+    if (isProcessing.current || activeIndex !== 0) return;
+    isProcessing.current = true;
+    e.preventDefault();
 
-    setIsFirstSlideMoove(true);
-
-    if (scrollStep === 0) {
+    if (!isHeroListVisible) {
       setIsHeroListVisible(true);
-      setScrollStep(1);
-      setActiveScrol(true);
-    } else if (scrollStep === 1) {
-      setActiveScrol(true);
-      setScrollStep(2);
+    } else {
+      setTimeout(() => {
+        swiperRef.current?.slideNext(600);
+      }, 0);
     }
 
     setTimeout(() => {
-      setIsFirstSlideMoove(false);
+      isProcessing.current = false;
     }, 600);
   };
 
@@ -57,58 +53,84 @@ function App() {
   };
 
   const handleTouchEnd = (e) => {
+    if (isProcessing.current || activeIndex !== 0) return;
+    isProcessing.current = true;
+
     touchEndY.current = e.changedTouches[0].clientY;
     const deltaY = touchStartY.current - touchEndY.current;
 
-    if (deltaY > 30 && activeIndex === 0 && scrollStep < 2) {
-      // свайп вверх
-      handleWheel();
+    if (deltaY > 100) {
+      if (!isHeroListVisible) {
+        setIsHeroListVisible(true);
+      } else {
+        setTimeout(() => {
+          swiperRef.current?.slideNext(600);
+        }, 0);
+      }
     }
+
+    setTimeout(() => {
+      isProcessing.current = false;
+    }, 600);
   };
 
   const handleSlideChange = (swiper) => {
     setActiveIndex(swiper.activeIndex);
-
     if (swiper.activeIndex !== 0) {
-      setScrollStep(2);
+      setIsHeroListVisible(true);
     } else {
-      setActiveScrol(false);
       setIsHeroListVisible(false);
-      setScrollStep(0);
     }
   };
+
+  const handleSlideChangeTransitionStart = (swiper) => {
+    if (activeIndex === 0 && !isHeroListVisible && swiper.activeIndex > 0) {
+      swiper.slideTo(0, 0);
+    }
+  };
+
+  useEffect(() => {
+    const container = document.querySelector("#swiper-container");
+    if (container) {
+      container.addEventListener("wheel", handleWheel, { passive: false });
+      container.addEventListener("touchstart", handleTouchStart);
+      container.addEventListener("touchend", handleTouchEnd);
+    }
+
+    return () => {
+      if (container) {
+        container.removeEventListener("wheel", handleWheel, { passive: false });
+        container.removeEventListener("touchstart", handleTouchStart);
+        container.removeEventListener("touchend", handleTouchEnd);
+      }
+    };
+  }, [activeIndex, isHeroListVisible]);
 
   const maxOffset = 60;
   const backgroundOffset = (activeIndex / (slidesCount - 1)) * maxOffset;
 
   return (
     <div
-      style={{ position: "relative", overflow: "hidden" }}
-      onWheel={handleWheel}
-      onTouchStart={handleTouchStart}
-      onTouchEnd={handleTouchEnd}>
-      {/* background */}
+      id="swiper-container"
+      style={{ position: "relative", overflow: "hidden" }}>
       <div
         className="background"
         style={{
           backgroundPosition: `center ${backgroundOffset}%`,
         }}
       />
-      {/* earth */}
       <img
         src={earth}
         alt="earth"
         className="earthBackground"
         style={earthStyles(isHeroListVisible, activeIndex)}
       />
-      {/* moon */}
       <img
         src={moon}
         alt="moon"
         className="moon"
         style={moonStyles(activeIndex, slidesCount)}
       />
-      {/* bottomEarth */}
       <img
         src={bottomEarth}
         alt="earth"
@@ -117,23 +139,24 @@ function App() {
       />
       <RedDecorationElement
         activeIndex={activeIndex}
-        isHeroListVisible={isHeroListVisible}></RedDecorationElement>
-
+        isHeroListVisible={isHeroListVisible}
+      />
       <BlueDecorationElement
         activeIndex={activeIndex}
-        isHeroListVisible={isHeroListVisible}></BlueDecorationElement>
+        isHeroListVisible={isHeroListVisible}
+      />
 
       <Swiper
-        allowSlideNext={activeScrol}
-        allowTouchMove={activeScrol}
+        onSwiper={(swiper) => (swiperRef.current = swiper)}
         direction="vertical"
         speed={600}
         slidesPerView={1}
-        mousewheel={true}
+        mousewheel={{ enabled: true, sensitivity: 1 }}
         keyboard={{ enabled: true }}
         onSlideChange={handleSlideChange}
+        onSlideChangeTransitionStart={handleSlideChangeTransitionStart}
         modules={[Mousewheel, Keyboard]}
-        style={{ height: "100vh" }}>
+        style={{ height: "100vh", willChange: "transform" }}>
         <SwiperSlide style={slideStyle()}>
           <HeroSlide showList={isHeroListVisible} />
         </SwiperSlide>

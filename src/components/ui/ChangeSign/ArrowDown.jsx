@@ -6,9 +6,9 @@ function ArrowDown() {
       <path
         d="M12 19L6 13M12 19L18 13M12 19L12 5"
         stroke="#FF1B44"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
