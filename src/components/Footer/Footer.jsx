@@ -9,20 +9,26 @@ function Footer() {
       <h2 className={styles.title}>Join our community and harvest $SALT</h2>
       <div>
         <div className={styles.footerLinksWrapper}>
-          <a href="/" className={styles.footerLinks}>
+          <a
+            href="https://e-khartaniuk.github.io/Parallax/"
+            target="_blank"
+            className={styles.footerLinks}>
             How It Works
           </a>
-          <a href="/" className={styles.footerLinks}>
+          <a
+            href="https://e-khartaniuk.github.io/Parallax/"
+            target="_blank"
+            className={styles.footerLinks}>
             Buy Salt AI
           </a>
         </div>
         <div className={styles.bottomLine}></div>
         <div className={styles.footerWrapper}>
           <div className={styles.underlineLinks}>
-            <a href="/">
+            <a href="https://web.telegram.org/">
               <img src={xIcon} alt="x" className={styles.underlineLinksIcon} />
             </a>
-            <a href="/">
+            <a href="https://web.telegram.org/">
               <img
                 src={telegramIcon}
                 alt="telegram"

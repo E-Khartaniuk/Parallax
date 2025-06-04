@@ -18,12 +18,12 @@ function JoinCommunity() {
       </div>
       <ul className={styles.iconsWrapper}>
         <li>
-          <a href="/">
+          <a href="https://web.telegram.org/" target="_blank">
             <img src={xIcon} alt="X" className={styles.icon} />
           </a>
         </li>
         <li>
-          <a href="/">
+          <a href="https://x.com/" target="_blank">
             <img src={telegramicon} alt="telegram" className={styles.icon} />
           </a>
         </li>
