@@ -52,7 +52,7 @@ Before you begin, ensure you have the following installed:
 
     ```bash
     git clone [https://github.com/E-Khartaniuk/Parallax.git](https://github.com/E-Khartaniuk/Parallax.git)
-    cd AI_Parallax
+    cd parallax
     ```
 
 2.  **Install project dependencies:**
